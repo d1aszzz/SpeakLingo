@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<title>SpeakLingo — Vocabulary</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#090912;--bg2:#0f0f1a;--card:rgba(255,255,255,0.03);
+  --blue:#3B82F6;--purple:#8B5CF6;--cyan:#06B6D4;--green:#10B981;
+  --red:#EF4444;--amber:#F59E0B;--pink:#EC4899;
+  --text:#e2e8f0;--muted:#64748b;--border:rgba(255,255,255,0.07);
+  --nav-h:56px;--bot-h:60px;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{min-height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+h1,h2,h3{font-family:'Syne',sans-serif}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 60% 50% at 90% 10%,rgba(139,92,246,0.07),transparent 60%),radial-gradient(ellipse 50% 40% at 10% 90%,rgba(6,182,212,0.06),transparent 60%)}
+
+/* TOP NAV */
+nav.top-nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 16px;height:var(--nav-h);background:rgba(9,9,18,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
+.logo{display:flex;align-items:center;gap:8px;font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:#fff;text-decoration:none}
+.logo-box{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--blue),var(--purple));display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.nav-chip{font-size:.75rem;color:var(--muted);background:rgba(255,255,255,0.05);padding:4px 10px;border-radius:8px;border:1px solid var(--border)}
+
+/* BOTTOM NAV */
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:50;display:flex;height:var(--bot-h);background:rgba(9,9,18,0.95);backdrop-filter:blur(24px);border-top:1px solid var(--border);padding-bottom:env(safe-area-inset-bottom,0px)}
+.bottom-nav a,.bottom-nav button{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;background:transparent;border:none;cursor:pointer;color:var(--muted);font-family:'DM Sans',sans-serif;text-decoration:none;font-size:.6rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;transition:color .2s}
+.bottom-nav .active{color:var(--purple)}
+.nav-icon{font-size:1.25rem;line-height:1}
+
+/* MAIN */
+main{padding-top:var(--nav-h);padding-bottom:calc(var(--bot-h) + env(safe-area-inset-bottom,0px) + 16px);max-width:960px;margin:0 auto;padding-left:12px;padding-right:12px;position:relative;z-index:1}
+
+/* PAGE HEADER */
+.page-header{padding:20px 0 16px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.page-header h1{font-size:clamp(1.5rem,5vw,2.4rem);font-weight:800;letter-spacing:-.03em}
+.grad{background:linear-gradient(135deg,var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.page-header p{font-size:.82rem;color:var(--muted);margin-top:5px}
+.header-actions{display:flex;gap:8px;flex-shrink:0}
+
+/* BTNS */
+.btn{padding:9px 14px;border-radius:10px;font-size:.82rem;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .2s;border:1px solid var(--border);background:rgba(255,255,255,0.04);color:var(--muted);font-family:'DM Sans',sans-serif;min-height:40px}
+.btn:active{background:rgba(255,255,255,0.08);color:#fff}
+.btn.primary{background:linear-gradient(135deg,var(--purple),var(--blue));border:none;color:#fff}
+.btn.primary:active{opacity:.85}
+.btn.danger{border-color:rgba(239,68,68,.3);color:var(--red)}
+.btn.danger:active{background:rgba(239,68,68,.1)}
+
+/* STATS */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}
+@media(max-width:480px){.stats-row{grid-template-columns:repeat(2,1fr)}}
+.stat-card{border-radius:14px;padding:14px 12px;background:var(--card);border:1px solid var(--border)}
+.stat-num{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:700;line-height:1}
+.stat-label{font-size:.72rem;color:var(--muted);margin-top:4px}
+
+/* TOOLBAR */
+.toolbar{display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.search-wrap{flex:1;min-width:160px;display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:var(--card);border:1px solid var(--border)}
+.search-wrap input{background:transparent;border:none;outline:none;color:#fff;font-size:.9rem;font-family:'DM Sans',sans-serif;width:100%}
+.search-wrap input::placeholder{color:var(--muted)}
+.filter-tabs{display:flex;gap:3px;background:rgba(255,255,255,0.03);padding:3px;border-radius:10px;border:1px solid var(--border)}
+.tab{padding:6px 12px;border-radius:7px;font-size:.78rem;font-weight:500;cursor:pointer;transition:all .2s;border:none;background:transparent;color:var(--muted)}
+.tab.active{background:rgba(255,255,255,0.1);color:#fff}
+
+/* WORD CARDS GRID */
+.words-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+@media(max-width:480px){.words-grid{grid-template-columns:1fr}}
+
+.word-card{border-radius:16px;padding:16px;background:var(--card);border:1px solid var(--border);transition:all .2s;position:relative;overflow:hidden}
+.word-card:active{border-color:rgba(139,92,246,0.25);transform:translateY(-1px)}
+.word-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--purple),var(--cyan));opacity:0;transition:opacity .2s}
+.word-card:hover::before{opacity:1}
+
+.word-card-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px}
+.word-langs{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.lang-badge{font-size:.65rem;font-weight:700;padding:3px 8px;border-radius:5px;background:rgba(255,255,255,0.07);color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.arrow{color:var(--muted);font-size:.75rem}
+.word-actions{display:flex;gap:3px}
+.icon-btn{width:32px;height:32px;border-radius:7px;background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.icon-btn:active{background:rgba(255,255,255,0.08);color:#fff}
+.icon-btn.starred{color:var(--amber)}
+.icon-btn.del:active{background:rgba(239,68,68,.1);color:var(--red)}
+
+.word-original{font-size:.95rem;font-weight:500;color:#fff;margin-bottom:5px;line-height:1.4}
+.word-translated{font-size:.9rem;color:#a78bfa;font-style:italic;line-height:1.4;margin-bottom:10px}
+.word-meta{display:flex;align-items:center;justify-content:space-between}
+.word-time{font-size:.7rem;color:var(--muted)}
+.speak-btn{font-size:.72rem;padding:5px 11px;border-radius:7px;background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.2);color:#a78bfa;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:5px;min-height:30px}
+.speak-btn:active{background:rgba(139,92,246,0.2)}
+
+/* EMPTY STATE */
+.empty-state{text-align:center;padding:60px 20px}
+.empty-icon{font-size:3.5rem;margin-bottom:16px;opacity:.5}
+.empty-state h3{font-size:1.2rem;color:#fff;margin-bottom:6px}
+.empty-state p{color:var(--muted);font-size:.85rem;max-width:280px;margin:0 auto 20px}
+
+/* TOAST */
+.toast{position:fixed;bottom:calc(var(--bot-h) + env(safe-area-inset-bottom,0px) + 12px);left:50%;transform:translateX(-50%) translateY(20px);background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.4);color:var(--green);padding:11px 22px;border-radius:12px;font-size:.88rem;font-weight:500;opacity:0;transition:all .3s;z-index:200;pointer-events:none;backdrop-filter:blur(10px);white-space:nowrap;max-width:calc(100vw - 32px);text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.error{background:rgba(239,68,68,0.15);border-color:rgba(239,68,68,0.4);color:var(--red)}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);z-index:100;display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(min-width:500px){.modal-overlay{align-items:center}}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:#13131f;border:1px solid var(--border);border-radius:20px 20px 0 0;padding:24px 20px;width:100%;transform:translateY(20px);transition:transform .25s}
+@media(min-width:500px){.modal{border-radius:20px;max-width:400px;transform:scale(.95)}}
+.modal-overlay.open .modal{transform:translateY(0)}
+@media(min-width:500px){.modal-overlay.open .modal{transform:scale(1)}}
+.modal-handle{width:40px;height:4px;background:rgba(255,255,255,0.15);border-radius:2px;margin:0 auto 20px}
+@media(min-width:500px){.modal-handle{display:none}}
+.modal h3{font-size:1.1rem;margin-bottom:12px;color:#fff}
+.modal p{color:var(--muted);font-size:.88rem;margin-bottom:20px;line-height:1.6}
+.modal-btns{display:flex;gap:8px;justify-content:flex-end}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a class="logo" href="translator.html">
+    <div class="logo-box">🌐</div>
+    SpeakLingo
+  </a>
+  <span class="nav-chip">📚 Vocabulary</span>
+</nav>
+
+<main>
+  <div class="page-header">
+    <div>
+      <h1>My <span class="grad">Vocabulary</span></h1>
+      <p>All saved translations</p>
+    </div>
+    <div class="header-actions">
+      <button class="btn" onclick="exportVocab()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        CSV
+      </button>
+      <button class="btn danger" onclick="openClearModal()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6m4-6v6"/><path d="M9 6V4h6v2"/></svg>
+        Clear
+      </button>
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-num" id="statTotal" style="color:var(--blue)">0</div>
+      <div class="stat-label">Total</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="statStarred" style="color:var(--amber)">0</div>
+      <div class="stat-label">Starred</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="statLangs" style="color:var(--purple)">0</div>
+      <div class="stat-label">Languages</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="statToday" style="color:var(--green)">0</div>
+      <div class="stat-label">Today</div>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <div class="search-wrap">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--muted);flex-shrink:0"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="Search words…" oninput="render()"/>
+    </div>
+    <div class="filter-tabs">
+      <button class="tab active" onclick="setFilter('all',this)">All</button>
+      <button class="tab" onclick="setFilter('starred',this)">⭐</button>
+    </div>
+  </div>
+
+  <div class="words-grid" id="wordsGrid"></div>
+</main>
+
+<nav class="bottom-nav">
+  <a href="translator.html">
+    <span class="nav-icon">🎤</span>
+    Translator
+  </a>
+  <button class="active">
+    <span class="nav-icon">📚</span>
+    Vocabulary
+  </button>
+</nav>
+
+<!-- CLEAR MODAL -->
+<div class="modal-overlay" id="clearModal">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <h3>⚠️ Clear All Words?</h3>
+    <p>This will permanently delete all <strong id="clearCount">0</strong> saved words. This cannot be undone.</p>
+    <div class="modal-btns">
+      <button class="btn" onclick="closeClearModal()">Cancel</button>
+      <button class="btn danger" onclick="clearAllWords()">Delete All</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+let currentFilter = 'all';
+
+function getVocab() { return JSON.parse(localStorage.getItem('speaklingo_vocab') || '[]'); }
+function saveVocab(v) { localStorage.setItem('speaklingo_vocab', JSON.stringify(v)); }
+
+function render() {
+  const vocab = getVocab();
+  const query = document.getElementById('searchInput').value.toLowerCase();
+  const today = new Date().toDateString();
+  const todayCount = vocab.filter(v => new Date(v.timestamp).toDateString() === today).length;
+  const langs = new Set(vocab.map(v => v.toCode)).size;
+  document.getElementById('statTotal').textContent = vocab.length;
+  document.getElementById('statStarred').textContent = vocab.filter(v=>v.starred).length;
+  document.getElementById('statLangs').textContent = langs;
+  document.getElementById('statToday').textContent = todayCount;
+
+  let items = vocab;
+  if (currentFilter === 'starred') items = items.filter(v => v.starred);
+  if (query) items = items.filter(v => v.original?.toLowerCase().includes(query) || v.translated?.toLowerCase().includes(query));
+
+  const grid = document.getElementById('wordsGrid');
+
+  if (items.length === 0) {
+    grid.innerHTML = `
+      <div class="empty-state" style="grid-column:1/-1">
+        <div class="empty-icon">📭</div>
+        <h3>${vocab.length === 0 ? 'No words yet' : 'Nothing found'}</h3>
+        <p>${vocab.length === 0 ? 'Translate something and tap "Save to Vocabulary".' : 'Try a different search query.'}</p>
+        ${vocab.length === 0 ? '<a href="translator.html"><button class="btn primary" style="margin:0 auto">Go to Translator</button></a>' : ''}
+      </div>`;
+    return;
+  }
+
+  grid.innerHTML = items.slice().reverse().map(item => {
+    const d = new Date(item.timestamp);
+    const dateStr = d.toLocaleDateString('en-GB', {day:'2-digit',month:'short',year:'numeric'});
+    return `
+      <div class="word-card" id="card-${item.id}">
+        <div class="word-card-top">
+          <div class="word-langs">
+            <span class="lang-badge">${(item.fromCode||'?').toUpperCase()}</span>
+            <span class="arrow">→</span>
+            <span class="lang-badge">${(item.toCode||'?').toUpperCase()}</span>
+          </div>
+          <div class="word-actions">
+            <button class="icon-btn ${item.starred?'starred':''}" onclick="toggleStar(${item.id})">${item.starred?'⭐':'☆'}</button>
+            <button class="icon-btn del" onclick="deleteWord(${item.id})">✕</button>
+          </div>
+        </div>
+        <div class="word-original">${escHtml(item.original)}</div>
+        <div class="word-translated">${escHtml(item.translated)}</div>
+        <div class="word-meta">
+          <span class="word-time">${dateStr}</span>
+          <button class="speak-btn" onclick="speak('${escAttr(item.translated)}','${item.toCode||'en'}')">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+            Play
+          </button>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function toggleStar(id) {
+  const vocab = getVocab();
+  const item = vocab.find(v => v.id === id);
+  if (item) { item.starred = !item.starred; saveVocab(vocab); render(); }
+}
+
+function deleteWord(id) {
+  const vocab = getVocab().filter(v => v.id !== id);
+  saveVocab(vocab);
+  const card = document.getElementById('card-' + id);
+  if (card) { card.style.opacity = '0'; card.style.transform = 'scale(.9)'; setTimeout(render, 200); }
+  showToast('Word deleted');
+}
+
+function speak(text, langCode) {
+  const langMap = {en:'en-US',ru:'ru-RU',es:'es-ES',fr:'fr-FR',de:'de-DE',it:'it-IT',pt:'pt-PT',ja:'ja-JP',zh:'zh-CN',ko:'ko-KR',ar:'ar-SA',tr:'tr-TR',kk:'kk-KZ',uk:'uk-UA',pl:'pl-PL',nl:'nl-NL',hi:'hi-IN'};
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = langMap[langCode] || langCode;
+  window.speechSynthesis.cancel(); window.speechSynthesis.speak(utter);
+}
+
+function exportVocab() {
+  const vocab = getVocab();
+  if (!vocab.length) { showToast('Nothing to export', true); return; }
+  const rows = [['Original','Translation','From','To','Date','Starred'],...vocab.map(v=>[
+    `"${v.original.replace(/"/g,'""')}"`,`"${v.translated.replace(/"/g,'""')}"`,
+    v.fromCode||'',v.toCode||'',new Date(v.timestamp).toLocaleDateString(),v.starred?'Yes':'No'
+  ])];
+  const csv = rows.map(r=>r.join(',')).join('\n');
+  const blob = new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'speaklingo_vocab_' + new Date().toISOString().slice(0,10) + '.csv';
+  a.click();
+  showToast('✅ Exported!');
+}
+
+function setFilter(f, btn) {
+  currentFilter = f;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  render();
+}
+
+function openClearModal() {
+  document.getElementById('clearCount').textContent = getVocab().length;
+  document.getElementById('clearModal').classList.add('open');
+}
+function closeClearModal() { document.getElementById('clearModal').classList.remove('open'); }
+function clearAllWords() {
+  localStorage.removeItem('speaklingo_vocab');
+  closeClearModal(); render(); showToast('Vocabulary cleared');
+}
+
+function showToast(msg, isErr=false) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.className = 'toast show' + (isErr?' error':'');
+  setTimeout(()=>{ t.className = 'toast'; }, 3000);
+}
+
+function escHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') }
+function escAttr(s){ return String(s).replace(/'/g,"\\'").replace(/\n/g,' ') }
+
+document.getElementById('clearModal').addEventListener('click', function(e){ if(e.target===this) closeClearModal(); });
+
+render();
+</script>
+</body>
+</html>
