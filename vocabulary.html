@@ -121,7 +121,7 @@ main{padding-top:var(--nav-h);padding-bottom:calc(var(--bot-h) + env(safe-area-i
 <body>
 
 <nav class="top-nav">
-  <a class="logo" href="translator.html">
+  <a class="logo" href="index.html">
     <div class="logo-box">🌐</div>
     SpeakLingo
   </a>
@@ -180,7 +180,7 @@ main{padding-top:var(--nav-h);padding-bottom:calc(var(--bot-h) + env(safe-area-i
 </main>
 
 <nav class="bottom-nav">
-  <a href="translator.html">
+  <a href="index.html">
     <span class="nav-icon">🎤</span>
     Translator
   </a>
@@ -234,7 +234,7 @@ function render() {
         <div class="empty-icon">📭</div>
         <h3>${vocab.length === 0 ? 'No words yet' : 'Nothing found'}</h3>
         <p>${vocab.length === 0 ? 'Translate something and tap "Save to Vocabulary".' : 'Try a different search query.'}</p>
-        ${vocab.length === 0 ? '<a href="translator.html"><button class="btn primary" style="margin:0 auto">Go to Translator</button></a>' : ''}
+        ${vocab.length === 0 ? '<a href="index.html"><button class="btn primary" style="margin:0 auto">Go to Translator</button></a>' : ''}
       </div>`;
     return;
   }
